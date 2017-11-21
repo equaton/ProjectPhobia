@@ -82,6 +82,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1600024327126046
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4013098158511272}
+  - component: {fileID: 108262052551263698}
+  m_Layer: 0
+  m_Name: Point light
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1701593019049456
 GameObject:
   m_ObjectHideFlags: 0
@@ -100,6 +116,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!4 &4013098158511272
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1600024327126046}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0.06}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4848537634281200}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4828556962294006
 Transform:
   m_ObjectHideFlags: 1
@@ -124,6 +153,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4925551990081202}
+  - {fileID: 4013098158511272}
   m_Father: {fileID: 4895553171313728}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -371,6 +401,42 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!108 &108262052551263698
+Light:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1600024327126046}
+  m_Enabled: 0
+  serializedVersion: 8
+  m_Type: 2
+  m_Color: {r: 0.9577646, g: 0.9632353, b: 0.86407876, a: 1}
+  m_Intensity: 2.04
+  m_Range: 3.44
+  m_SpotAngle: 80.8
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 0
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_Lightmapping: 4
+  m_AreaSize: {x: 1, y: 1}
+  m_BounceIntensity: 1
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
 --- !u!114 &114155830734276754
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -390,6 +456,7 @@ MonoBehaviour:
   onlyYRotation: 1
   cursorLine: {fileID: 120610134455819142}
   m_MovementVelocityValue: {x: 0, y: 0, z: 0}
+  FrontFacingTransform: {fileID: 4848537634281200}
 --- !u!114 &114234419491806968
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -440,7 +507,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ShootingAudio: {fileID: 82293094001261782}
   m_FireClip: {fileID: 8300000, guid: 38b6384f9941c4ccd8c7bf1c8f8cc4ab, type: 3}
-  gunLight: {fileID: 0}
+  gunLight: {fileID: 108262052551263698}
   reloadingTime: 0.4
   bulletDamage: 20
   gunRange: 100
@@ -634,7 +701,7 @@ LineRenderer:
     alignment: 0
     textureMode: 0
     generateLightingData: 0
-  m_UseWorldSpace: 0
+  m_UseWorldSpace: 1
   m_Loop: 0
 --- !u!136 &136146186720896934
 CapsuleCollider:

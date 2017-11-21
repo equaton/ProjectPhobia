@@ -13,6 +13,8 @@ public class PlayerMovementKeyboardAndMouse : MonoBehaviour
 	    public LineRenderer cursorLine; 			// Reference to the LineRendered component in the Player object
   		[HideInInspector]
 		public Vector3 m_MovementVelocityValue;     // The current value of the movement input as velocity vector
+		public Ray ray;								// Ray of the vector of the cursor from the camera.
+		public Transform FrontFacingTransform;		// The transform of the front facing object, usually the gun holder object. It will rotate its x axys to follow the mouse.
 
 
 		private Rigidbody m_Rigidbody;              // Reference used to move the player.
@@ -71,7 +73,7 @@ public class PlayerMovementKeyboardAndMouse : MonoBehaviour
 			m_OriginalPitch = m_MovementAudio.pitch;
 
 			// Store rotation of the view camera on the Y axis
-		viewCameraYRotation = viewCamera.transform.rotation.eulerAngles.y;
+	 		viewCameraYRotation = viewCamera.transform.rotation.eulerAngles.y;
 
 			
 			// Get the cursor line cmponent from the Object
@@ -107,6 +109,13 @@ public class PlayerMovementKeyboardAndMouse : MonoBehaviour
 			if (onlyYRotation) 
 			{
 				transform.rotation = Quaternion.Euler (0, transform.rotation.eulerAngles.y, 0);
+			}
+
+			// Rotate the X axis of the Front facing transform to move the gun holder up and down to follow where the cursor is.
+			if (FrontFacingTransform) 
+			{
+				FrontFacingTransform.LookAt (hit.point);
+				//FrontFacingTransform.rotation = Quaternion.Euler (FrontFacingTransform.rotation.eulerAngles.y, 0, 0);
 			}
 
 			//Play walking audio

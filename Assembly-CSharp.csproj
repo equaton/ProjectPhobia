@@ -52,9 +52,9 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Project Bastion\Scripts\Camera\CameraControl.cs" />
+     <Compile Include="Assets\Project Bastion\Scripts\Enemy\EnemyHealth.cs" />
      <Compile Include="Assets\Project Bastion\Scripts\Player\PlayerMovementKeyboardAndMouse.cs" />
      <Compile Include="Assets\Project Bastion\Scripts\Player\PlayerShooting.cs" />
-     <Compile Include="Assets\Project Bastion\Scripts\Projectile\ProjectileExplosion.cs" />
      <Compile Include="Assets\Project Bastion\Scripts\Unused for now\FieldOfView.cs" />
      <Compile Include="Assets\Project Bastion\Scripts\Unused for now\PlayerMovementKeyboard.cs" />
      <None Include="Assets\Standard Assets\Prototyping\Shaders\WorldCoordDiffuse.shader" />
