@@ -24,6 +24,7 @@ public class PlayerMovementKeyboardAndMouse : MonoBehaviour
 		private ParticleSystem[] m_particleSystems; // References to all the particles systems used by the Player.
 		private Camera viewCamera;					// Reference to the main camera scene object.
 		private float viewCameraYRotation;			// Reference to the rotation of the Y Axis of the Camera
+		private	Ray cursorLineRay;
 
 
 		private void Awake ()
@@ -98,13 +99,6 @@ public class PlayerMovementKeyboardAndMouse : MonoBehaviour
 			//Make the GameObject look at the collision between the cursor and the ground.
 			transform.LookAt(hit.point);
 
-			//Draw a line from the player to the cursor space in the map
-			if (cursorLine) 
-			{
-				cursorLine.SetPosition (0,transform.position);
-				cursorLine.SetPosition (1, hit.point);
-			}
-
 			// the Player will look at the point in all Axis, if the rotation needs to happen only on the Y axis, then set the onlyYRotation to false
 			if (onlyYRotation) 
 			{
@@ -120,13 +114,32 @@ public class PlayerMovementKeyboardAndMouse : MonoBehaviour
 
 			//Play walking audio
 			StepsAudio ();
-		}
 
-	private void DrawCursorLine (Vector3 hit)
-	{
-		cursorLine.SetPosition (0, transform.position);
-		cursorLine.SetPosition (1, hit);
-	}
+			// Draw the laserLine
+			//Draw a line from the player to the cursor space in the map
+			if (cursorLine) 
+			{
+				DrawCursorLine ();
+			}
+				
+		}
+		
+		public void DrawCursorLine()
+		{
+
+			// Get a ray from the player to the point where the cursor is. Create a line between that and whatever is hit by that ray.
+
+			cursorLineRay.origin = FrontFacingTransform.position;
+			cursorLineRay.direction = FrontFacingTransform.forward;
+
+			RaycastHit cursorLineHit;
+
+			Physics.Raycast (cursorLineRay, out cursorLineHit);
+
+
+			cursorLine.SetPosition (0,FrontFacingTransform.position);
+			cursorLine.SetPosition (1, cursorLineHit.point);
+		}
 
 		private void StepsAudio ()
 		{

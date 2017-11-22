@@ -37,15 +37,17 @@ GameObject:
   - component: {fileID: 4895553171313728}
   - component: {fileID: 33543824697862182}
   - component: {fileID: 136146186720896934}
+  - component: {fileID: 136913468357459366}
   - component: {fileID: 23405299305445250}
   - component: {fileID: 54284973203507954}
   - component: {fileID: 114155830734276754}
   - component: {fileID: 120610134455819142}
   - component: {fileID: 82334077171186476}
   - component: {fileID: 82293094001261782}
+  - component: {fileID: 114967675295451472}
   m_Layer: 11
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -515,6 +517,26 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   gunLine: {fileID: 120895088198325428}
+--- !u!114 &114967675295451472
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1352307869404946}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cc1edf4fff47cc45a651a3c68bc3fbe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingHealth: 100
+  isPlayerAlive: 1
+  playerHitAudio: {fileID: 0}
+  playerDeathAudio: {fileID: 0}
+  playerHearthSlider: {fileID: 0}
+  playerHitFlashImage: {fileID: 0}
+  HitFlashAlpha: 80
+  HitFlashFadeTime: 5
+  HitFlashColor: {r: 255, g: 0, b: 0, a: 1}
 --- !u!120 &120610134455819142
 LineRenderer:
   m_ObjectHideFlags: 1
@@ -529,7 +551,7 @@ LineRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 2100000, guid: e97f2f29f16836c4080e07dd27f15155, type: 2}
+  - {fileID: 2100000, guid: 529d3f3a0ff2a1b48baef06496de2263, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -559,8 +581,8 @@ LineRenderer:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 2
-        time: 0.003030777
-        value: 0.2941208
+        time: 0.011226654
+        value: 0.11765289
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -571,8 +593,8 @@ LineRenderer:
         outSlope: 0
         tangentMode: 0
       - serializedVersion: 2
-        time: 1
-        value: 0
+        time: 0.9917908
+        value: 0.08823395
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -581,7 +603,7 @@ LineRenderer:
       m_RotationOrder: 0
     colorGradient:
       serializedVersion: 2
-      key0: {r: 1, g: 1, b: 1, a: 1}
+      key0: {r: 0.8000001, g: 0.011764707, b: 0.011764707, a: 1}
       key1: {r: 1, g: 0.014705896, b: 0.014705896, a: 1}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
@@ -712,7 +734,20 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 1
+  m_Radius: 0.55
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!136 &136913468357459366
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1352307869404946}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.8
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}

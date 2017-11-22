@@ -12,8 +12,8 @@ public class EnemyHealth : MonoBehaviour {
 	private Rigidbody EnemyRigidBody;		// Reference to the Enemy Game Object.
 	private float currentHealth;			// The current health of the enemy.
 	private ParticleSystem hitParticles;	// Particles to show when the enemy is hit. 
-	private AudioSource enemyAudio;			// Reference to the Audio Source of the Enemy.
-	private Collider enemyCollider;			// Reference to the enemy Collider
+	private AudioSource playerAudio;			// Reference to the Audio Source of the Enemy.
+	private Collider playerCollider;			// Reference to the enemy Collider
 	private bool isSinking = false;			// Is the enemy starting to sink after death?
 	private float sinkSpeed = 2f;			// Speed of enemy sinking after death
 	private float deathTime = 2f;			// Time after the enemy is destroyed after death.
@@ -27,8 +27,8 @@ public class EnemyHealth : MonoBehaviour {
 		// Get the set of references.
 		hitParticles = GetComponentInChildren <ParticleSystem>();
 		EnemyRigidBody = GetComponent<Rigidbody>();
-		enemyAudio = GetComponentInChildren<AudioSource> ();
-		enemyCollider = GetComponentInChildren <Collider> ();
+		playerAudio = GetComponentInChildren<AudioSource> ();
+		playerCollider = GetComponentInChildren <Collider> ();
 
  	}
 	
@@ -75,8 +75,8 @@ public class EnemyHealth : MonoBehaviour {
 		
 		{
 			// Set AudioSource clip to EnemyHit and play
-			enemyAudio.clip = enemyHitAudio;
-			enemyAudio.Play ();
+			playerAudio.clip = enemyHitAudio;
+			playerAudio.Play ();
 		}
 
 	}
@@ -87,14 +87,14 @@ public class EnemyHealth : MonoBehaviour {
 		isEnemyAlive = false;
 
 		// Make the collider a trigger so the shot won't hit the enemy anymore
-		enemyCollider.isTrigger = true;
+		playerCollider.isTrigger = true;
 
 		// Start the enemy sinking
 		StartCoroutine (StartSinking());
 
 		// Set AudioSource clip to EnemyDeath and play
-		enemyAudio.clip = enemyDeathAudio;
-		enemyAudio.Play ();
+		playerAudio.clip = enemyDeathAudio;
+		playerAudio.Play ();
 	}
 
 	IEnumerator StartSinking()
