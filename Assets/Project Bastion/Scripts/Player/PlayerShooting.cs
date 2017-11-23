@@ -14,18 +14,20 @@ public class PlayerShooting : MonoBehaviour
 	public LayerMask shootableLayer;			// What is the layer the player can shoot to?
 	public LineRenderer gunLine;				// The Line renderer that will create the shooting line.
 
-
-
 	private string m_FireButton;				// The input axis that is used for launching projectiles.
 	private float timer;						// A timer to decide when to fire.
-	private float effectsDisplayTime = 0.15f;    // The proportion of the timeBetweenBullets that the effects will display for.
-	private RaycastHit gunHit;
-	private Ray shootRay;
+	private float effectsDisplayTime = 0.15f;   // The proportion of the timeBetweenBullets that the effects will display for.
+	private RaycastHit gunHit;					// Reference to the Raycast used to calculate the ray of the shooting.	
+	private Ray shootRay;						// Reference for the vector used to do the ray for the shooting.
+	private PlayerHealth playerHealth;
 
-	private void Start ()
+	private void Awake ()
 	{
 		// Define the fire axis .
 		m_FireButton = "Fire1";
+
+		// Get a reference to the player health.
+		playerHealth = GetComponentInParent<PlayerHealth>();
 
 	}
 
@@ -36,8 +38,8 @@ public class PlayerShooting : MonoBehaviour
 		// Add the time since Update was last called to the timer.
 		timer += Time.deltaTime;
 
-		// if the fire button is pressed
-		if (Input.GetButtonDown (m_FireButton) && timer >= reloadingTime) {
+		// if the fire button is pressed and the player is still alive
+		if (Input.GetButtonDown (m_FireButton) && timer >= reloadingTime && playerHealth.isPlayerAlive ){
 
 			// Fire the gun
 			Fire ();

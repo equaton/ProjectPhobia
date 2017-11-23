@@ -13,7 +13,7 @@ public class EnemyAttack : MonoBehaviour {
 	private float timerForAttacks = 0;					// Timer to calculate when an attack can occurr.
 
 	// Use this for initialization
-	void Awake () 
+	void Start () 
 	{
 		// Get a reference to the Player GameObject.
 		player = GameObject.FindGameObjectWithTag("Player");

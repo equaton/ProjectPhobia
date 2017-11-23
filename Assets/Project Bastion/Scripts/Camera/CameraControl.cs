@@ -51,7 +51,6 @@ public class CameraControl : MonoBehaviour
 	//NEEDS SOME REFACTORING AS IT'S A ONE TRICK METHOD
 	private void FindPositionBasedOnVelocity ()
 	{
-		Vector3 advancedPos = new Vector3 ();
 
 		//NEED TO ADD CHECK IF TARGET IS A RIGIDBODY, IF NOT PROVIDE A VECTOR FOR THE VELOCITY
 		Vector3 m_TargetVelocity = m_Targets[0].GetComponent<PlayerMovementKeyboardAndMouse>().m_MovementVelocityValue;

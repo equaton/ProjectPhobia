@@ -87,6 +87,9 @@ public class PlayerHealth : MonoBehaviour {
 		// Set AudioSource clip to EnemyDeath and play
 		playerAudio.clip = playerDeathAudio;
 		playerAudio.Play ();
+
+		// Disable controls on death.
+
 	}
 		
 

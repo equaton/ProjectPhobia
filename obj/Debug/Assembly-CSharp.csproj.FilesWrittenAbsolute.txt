@@ -19,3 +19,7 @@
 /Users/mdn6110/project-phobia/Temp/bin/Debug/Unity.CecilTools.dll
 /Users/mdn6110/project-phobia/Temp/bin/Debug/Mono.Cecil.Pdb.dll
 /Users/mdn6110/project-phobia/Temp/bin/Debug/Mono.Cecil.Mdb.dll
+/Users/mdn6110/project-phobia/Temp/bin/Debug/Assembly-CSharp.dll.mdb
+/Users/mdn6110/project-phobia/Temp/bin/Debug/Assembly-CSharp.dll
+/Users/mdn6110/project-phobia/obj/Debug/Assembly-CSharp.dll
+/Users/mdn6110/project-phobia/obj/Debug/Assembly-CSharp.dll.mdb
