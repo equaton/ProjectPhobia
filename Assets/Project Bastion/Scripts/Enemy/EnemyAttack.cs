@@ -6,6 +6,7 @@ public class EnemyAttack : MonoBehaviour {
 
 	public float enemyAttackDamage = 20;			// Amount of damage done by Enemy.
 	public float enemyTimeBetweenAttacks = 1f;		// Amount of time between one attack and another.
+	public bool enemyAttackEnabled = true;			// Is the Enemy attack enabled?
 
 	private GameObject 	player;						// Reference to the Player GameObject.
 	private PlayerHealth playerHealth;				// Reference to the Player Health.
@@ -29,21 +30,23 @@ public class EnemyAttack : MonoBehaviour {
 		// Is the timer higher than the time when the Enemy is allowed to attack?
 		if (timerForAttacks > enemyTimeBetweenAttacks) 
 		{
-
-			// Is the Enemy touching the Player?
-			if (contactWithPlayer)
+			//Is the enemy allowed to attack?
+			if (enemyAttackEnabled)
 			{
 
-				//Is the player still alive?
-				if (playerHealth.isPlayerAlive)
-				{
+				// Is the Enemy touching the Player?
+				if (contactWithPlayer) {
+
+					//Is the player still alive?
+					if (playerHealth.isPlayerAlive) {
 					
-					// Inflict damage to the player.
-					playerHealth.TakeDamage (enemyAttackDamage);
+						// Inflict damage to the player.
+						playerHealth.TakeDamage (enemyAttackDamage);
 
-					// Reset the timer for attacks.
-					timerForAttacks = 0;
+						// Reset the timer for attacks.
+						timerForAttacks = 0;
 
+					}
 				}
 			}
 		}

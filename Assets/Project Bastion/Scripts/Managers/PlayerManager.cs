@@ -14,9 +14,9 @@ public class PlayerManager
 	public Transform spawnPoint;								// Point where to spawn the Player in.
 	[HideInInspector] public GameObject playerInstance;			// Referenece to the player instance.
 	public static GameManager gameManager;
-	
+	public PlayerHealth playerhealth;							// Reference to the Player's health script.
+
 	private PlayerMovementKeyboardAndMouse playerMovement; 		// Reference to the Player's moving script.
-	private PlayerHealth playerhealth;							// Reference to the Player's health script.
 	private PlayerShooting playerShooting;						// Reference to the Plater's Shooting script.
 
 	// Use this for initialization
@@ -27,8 +27,6 @@ public class PlayerManager
 		playerhealth = playerInstance.GetComponent <PlayerHealth> ();
 		playerShooting = playerInstance.GetComponentInChildren<PlayerShooting>();
 
-		Debug.Log (playerMovement);
-
 	}
 	
 	public void DisableControls()
@@ -37,7 +35,6 @@ public class PlayerManager
 		if (playerMovement != null) 
 		{
 			playerMovement.isMovementEnabled = false;
-			Debug.Log (playerMovement);
 		}
 
 		// Block the shooting.

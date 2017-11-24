@@ -659,6 +659,7 @@ GameObject:
   m_Component:
   - component: {fileID: 421849935}
   - component: {fileID: 421849936}
+  - component: {fileID: 421849937}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: GameController
@@ -699,8 +700,27 @@ MonoBehaviour:
   playerPrefab: {fileID: 1352307869404946, guid: 4d3aa9f2038ed4154a968b50331052ff,
     type: 2}
   cameraControl: {fileID: 1761410512}
+  healthBar: {fileID: 1019495417}
   playerHearthSlider: {fileID: 1019495419}
   playerHitFlashImage: {fileID: 1646205110}
+  spawnManager: {fileID: 421849937}
+--- !u!114 &421849937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 421849934}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c0a0e3e1659a41488276e966af85022, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemySpawnPoint: {fileID: 1422006158}
+  enemyManager:
+    enemyInstance: {fileID: 0}
+  enemyPrefab: {fileID: 1839187996808650, guid: 3904b7d9df97f46f493a5f95a5be8b74,
+    type: 2}
+  timebetweenSpawns: 5
 --- !u!1 &615057055
 GameObject:
   m_ObjectHideFlags: 0
@@ -1067,6 +1087,34 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.Slider+SliderEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!1 &1422006157
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1422006158}
+  m_Layer: 0
+  m_Name: EnemySpawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1422006158
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1422006157}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 11.38, y: 0, z: -0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1444013358
 GameObject:
   m_ObjectHideFlags: 0

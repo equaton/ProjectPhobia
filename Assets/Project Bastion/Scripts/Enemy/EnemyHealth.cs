@@ -5,15 +5,16 @@ using UnityEngine;
 public class EnemyHealth : MonoBehaviour {
 
 	public float startingHealth = 20;		// The starting health of the enemy.
-	public bool isEnemyAlive = true;				// Is the enemy alive or dead?
+	public bool isEnemyAlive = true;		// Is the enemy alive or dead?
 	public AudioClip enemyHitAudio;			// Clip to play when enemy is hit.
 	public AudioClip enemyDeathAudio;		// Clip to play when enemy is dead.
 
-	private Rigidbody EnemyRigidBody;		// Reference to the Enemy Game Object.
+	private Rigidbody enemyRigidBody;		// Reference to the Enemy Game Object.
 	private float currentHealth;			// The current health of the enemy.
 	private ParticleSystem hitParticles;	// Particles to show when the enemy is hit. 
-	private AudioSource playerAudio;			// Reference to the Audio Source of the Enemy.
-	private Collider playerCollider;			// Reference to the enemy Collider
+	private AudioSource enemyAudio;			// Reference to the Audio Source of the Enemy.
+	private Collider enemyCollider;			// Reference to the enemy Collider
+	private EnemyAttack enemyAttack;		// Reference to the enemy attack Script.
 	private bool isSinking = false;			// Is the enemy starting to sink after death?
 	private float sinkSpeed = 2f;			// Speed of enemy sinking after death
 	private float deathTime = 2f;			// Time after the enemy is destroyed after death.
@@ -26,9 +27,10 @@ public class EnemyHealth : MonoBehaviour {
 
 		// Get the set of references.
 		hitParticles = GetComponentInChildren <ParticleSystem>();
-		EnemyRigidBody = GetComponent<Rigidbody>();
-		playerAudio = GetComponentInChildren<AudioSource> ();
-		playerCollider = GetComponentInChildren <Collider> ();
+		enemyRigidBody = GetComponent<Rigidbody>();
+		enemyAttack = GetComponent<EnemyAttack>();
+		enemyAudio = GetComponentInChildren<AudioSource> ();
+		enemyCollider = GetComponentInChildren <Collider> ();
 
  	}
 	
@@ -65,7 +67,7 @@ public class EnemyHealth : MonoBehaviour {
 		currentHealth -= damage; 
 
 
-		// Check if the Eneme is dead.
+		// Check if the Enemy is dead.
 		if (currentHealth < 0 || currentHealth == 0) {
 			// Perform a set of actions that occurr on enemy death
 			EnemyDeath ();
@@ -75,8 +77,8 @@ public class EnemyHealth : MonoBehaviour {
 		
 		{
 			// Set AudioSource clip to EnemyHit and play
-			playerAudio.clip = enemyHitAudio;
-			playerAudio.Play ();
+			enemyAudio.clip = enemyHitAudio;
+			enemyAudio.Play ();
 		}
 
 	}
@@ -87,20 +89,23 @@ public class EnemyHealth : MonoBehaviour {
 		isEnemyAlive = false;
 
 		// Make the collider a trigger so the shot won't hit the enemy anymore
-		playerCollider.isTrigger = true;
+		enemyCollider.isTrigger = true;
+
+		// Disable the Enemy attack.
+		enemyAttack.enemyAttackEnabled = false;
 
 		// Start the enemy sinking
 		StartCoroutine (StartSinking());
 
 		// Set AudioSource clip to EnemyDeath and play
-		playerAudio.clip = enemyDeathAudio;
-		playerAudio.Play ();
+		enemyAudio.clip = enemyDeathAudio;
+		enemyAudio.Play ();
 	}
 
 	IEnumerator StartSinking()
 	{
 		// Make the Enemy RigidBody Kinematic so can be controlled by script.
-		EnemyRigidBody.isKinematic = true;
+		enemyRigidBody.isKinematic = true;
 
 		yield return new WaitForSeconds (2);
 

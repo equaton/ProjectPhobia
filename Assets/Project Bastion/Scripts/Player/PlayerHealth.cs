@@ -83,7 +83,7 @@ public class PlayerHealth : MonoBehaviour {
 
 	void PlayerDeath()
 	{
-		// Enemy is dead!
+		// Player is dead!
 		isPlayerAlive = false;
 
 		// Set AudioSource clip to EnemyDeath and play
