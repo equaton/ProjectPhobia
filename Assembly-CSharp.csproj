@@ -58,6 +58,7 @@
      <Compile Include="Assets\Project Bastion\Scripts\Managers\EnemySpawnManager.cs" />
      <Compile Include="Assets\Project Bastion\Scripts\Managers\GameManager.cs" />
      <Compile Include="Assets\Project Bastion\Scripts\Managers\PlayerManager.cs" />
+     <Compile Include="Assets\Project Bastion\Scripts\Managers\SpawnManagers\SimpleEnemySpawnManager.cs" />
      <Compile Include="Assets\Project Bastion\Scripts\Player\PlayerHealth.cs" />
      <Compile Include="Assets\Project Bastion\Scripts\Player\PlayerMovementKeyboardAndMouse.cs" />
      <Compile Include="Assets\Project Bastion\Scripts\Player\PlayerShooting.cs" />
