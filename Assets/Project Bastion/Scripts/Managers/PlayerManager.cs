@@ -2,35 +2,68 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-namespace complete {
-	// This class is to control what the player can do at any moment, like disable/enable movement and shooting.
-	[Serializable]
-	public class PlayerManager 
+
+
+// This class is to control what the player can do at any moment, like disable/enable movement and shooting.
+[Serializable]
+public class PlayerManager 
+{
+
+	public Transform spawnPoint;								// Point where to spawn the Player in.
+	[HideInInspector] public GameObject playerInstance;			// Referenece to the player instance.
+	public static GameManager gameManager;
+	
+	private PlayerMovementKeyboardAndMouse playerMovement; 		// Reference to the Player's moving script.
+	private PlayerHealth playerhealth;							// Reference to the Player's health script.
+	private PlayerShooting playerShooting;						// Reference to the Plater's Shooting script.
+
+	// Use this for initialization
+	public void SetupPlayer ()
 	{
+		// Get the reference to the Player components.
+		playerMovement = playerInstance.GetComponent<PlayerMovementKeyboardAndMouse>();
+		playerhealth = playerInstance.GetComponent <PlayerHealth> ();
+		playerShooting = playerInstance.GetComponentInChildren<PlayerShooting>();
 
-		public Transform spawnPoint;								// Point where to spawn the Player in.
-		[HideInInspector] public GameObject playerInstance;			// Referenece to the player instance.
+		Debug.Log (playerMovement);
 
-		private PlayerMovementKeyboardAndMouse playerMovement; 		// Reference to the Player's moving script.
-		private PlayerHealth playerhealth;							// Reference to the Player's health script.
-
-		// Use this for initialization
-		void Awake () {
-			
-			// Get the reference to the Player components.
-			playerInstance = GameObject.FindGameObjectWithTag ("Player");
-			playerMovement = playerInstance.GetComponent<PlayerMovementKeyboardAndMouse>();
-			playerhealth = playerInstance.GetComponent <PlayerHealth> ();
-		}
-		
-		public void DisableControlsOnDeath()
+	}
+	
+	public void DisableControls()
+	{
+		//Block the movement controls.
+		if (playerMovement != null) 
 		{
-			//Block the movement controls.
-			if (playerMovement != null) 
-			{
-				playerMovement.isMovementEnabled = false;
-			}
+			playerMovement.isMovementEnabled = false;
+			Debug.Log (playerMovement);
+		}
+
+		// Block the shooting.
+		if (playerShooting != null) 
+		{
+			playerShooting.shootingEnabled = false;
+		}
+
+	}
+
+	public void EnableControls()
+	{
+		//Enable the movement controls.
+		if (playerMovement != null) 
+		{
+			playerMovement.isMovementEnabled = true;
+			Debug.Log (playerMovement);
+		}
+
+		// Enable the shooting.
+		if (playerShooting != null) 
+		{
+			playerShooting.shootingEnabled = true;
 		}
 	}
+
 }
+	
+

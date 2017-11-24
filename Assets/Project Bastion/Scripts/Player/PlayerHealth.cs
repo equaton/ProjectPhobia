@@ -5,19 +5,19 @@ using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour {
 
-	public float startingHealth = 100;		// The starting health of the player.
+	public float startingHealth = 100;						// The starting health of the player.
 	[HideInInspector]
-	public bool isPlayerAlive = true;		// Is the player alive or dead?
+	public bool isPlayerAlive = true;						// Is the player alive or dead?
 	public AudioClip playerHitAudio;		// Clip to play when player is hit.
-	public AudioClip playerDeathAudio;		// Clip to play when player is dead.
+	public AudioClip playerDeathAudio;	// Clip to play when player is dead.
 	public Slider playerHearthSlider;		// Reference to the player health slider.
 	public Image playerHitFlashImage;		// Reference to the image that will appear when the player is hit.
-	public float HitFlashAlpha = 80f;		// Amount of the alpha component of the playerHitFlashImage.
-	public float HitFlashFadeTime = 3f ;	// Amount of time for the playerHitImage to disappear.
+	public float HitFlashAlpha = 80f;						// Amount of the alpha component of the playerHitFlashImage.
+	public float HitFlashFadeTime = 3f ;					// Amount of time for the playerHitImage to disappear.
 	public Color HitFlashColor = new Color (255f,0f,0f);
 
-	private float currentHealth;			// The current health of the player.
-	private AudioSource playerAudio;		// Reference to the Audio Source of the Enemy.
+	private float currentHealth;							// The current health of the player.
+	private AudioSource playerAudio;						// Reference to the Audio Source of the Enemy.
 
 
 	// Use this for initialization
@@ -28,6 +28,8 @@ public class PlayerHealth : MonoBehaviour {
 
 		// Get the set of references.
 		playerAudio = GetComponentInChildren<AudioSource> ();
+		playerHearthSlider = GameManager.gameManager.playerHearthSlider;
+		playerHitFlashImage = GameManager.gameManager.playerHitFlashImage;
 
 		//Setup the Player Health Slider.
 		playerHearthSlider.minValue = 0;

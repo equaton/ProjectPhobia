@@ -13,6 +13,7 @@ public class PlayerShooting : MonoBehaviour
 	public float gunRange = 100f;				// How far away the gun is shooting.
 	public LayerMask shootableLayer;			// What is the layer the player can shoot to?
 	public LineRenderer gunLine;				// The Line renderer that will create the shooting line.
+	public bool	shootingEnabled = true;				// Can the Player shoot?
 
 	private string m_FireButton;				// The input axis that is used for launching projectiles.
 	private float timer;						// A timer to decide when to fire.
@@ -34,21 +35,24 @@ public class PlayerShooting : MonoBehaviour
 
 	private void Update ()
 	{
+		if (shootingEnabled)
+		{
 
-		// Add the time since Update was last called to the timer.
-		timer += Time.deltaTime;
+			// Add the time since Update was last called to the timer.
+			timer += Time.deltaTime;
 
-		// if the fire button is pressed and the player is still alive
-		if (Input.GetButtonDown (m_FireButton) && timer >= reloadingTime && playerHealth.isPlayerAlive ){
+			// if the fire button is pressed and the player is still alive
+			if (Input.GetButtonDown (m_FireButton) && timer >= reloadingTime && playerHealth.isPlayerAlive) {
 
-			// Fire the gun
-			Fire ();
-		}
+				// Fire the gun
+				Fire ();
+			}
 
-		// If the timer has exceeded the proportion of timeBetweenBullets that the effects should be displayed for...
-		if (timer >= reloadingTime * effectsDisplayTime) {
-			// ... disable the effects.
-			DisableEffects ();
+			// If the timer has exceeded the proportion of timeBetweenBullets that the effects should be displayed for...
+			if (timer >= reloadingTime * effectsDisplayTime) {
+				// ... disable the effects.
+				DisableEffects ();
+			}
 		}
 
 	}
