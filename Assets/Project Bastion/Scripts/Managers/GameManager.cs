@@ -91,8 +91,9 @@ public class GameManager : MonoBehaviour
 		healthBar.SetActive (true);
 
 		// Start to spawn enemies.
-		Debug.Log("Starting to spawn enemies.");
 		spawnManager.StartSpawningEnemies();
+
+
 	}
 
 

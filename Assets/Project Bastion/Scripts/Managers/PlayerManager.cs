@@ -14,7 +14,7 @@ public class PlayerManager
 	public Transform spawnPoint;								// Point where to spawn the Player in.
 	[HideInInspector] public GameObject playerInstance;			// Referenece to the player instance.
 	public static GameManager gameManager;
-	public PlayerHealth playerhealth;							// Reference to the Player's health script.
+	[HideInInspector] public PlayerHealth playerhealth;			// Reference to the Player's health script.
 
 	private PlayerMovementKeyboardAndMouse playerMovement; 		// Reference to the Player's moving script.
 	private PlayerShooting playerShooting;						// Reference to the Plater's Shooting script.

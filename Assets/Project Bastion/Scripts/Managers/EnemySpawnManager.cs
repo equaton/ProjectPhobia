@@ -7,6 +7,5 @@ public abstract class EnemySpawnManager: ScriptableObject
 {
 
 	// Spawn Enemy with selected prefab and position.
-	public abstract void SpawnMonster(GameObject prefab, Transform position);
 	public abstract void StartSpawningEnemies ();
 }

@@ -21,9 +21,13 @@ public class SimpleEnemySpawnManager : EnemySpawnManager {
 	}
 		
 	// Spawn Enemy with selected prefab and position.
-	public override void SpawnMonster(GameObject prefab, Transform position)
+	public void SpawnMonster(GameObject prefab, Transform position)
 	{
+		// Spawn the enemy.
 		enemyManager.enemyInstance = GameObject.Instantiate(enemyPrefab, position.position, position.rotation) as GameObject;
+
+		// Set it up.
+		enemyManager.SetupEnemy ();
+
 	}
-		
 }
