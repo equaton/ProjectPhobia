@@ -125,20 +125,23 @@ public class PlayerMovementKeyboardAndMouse : MonoBehaviour
 			if (cursorLine) {
 				DrawCursorLine ();
 			}
+		} else 
+		{
+			// Disable the LineRenderer.
+			DisableCursorLine();
 		}
-					
+
+			
 	}
 	
 	public void DrawCursorLine()
 	{
 
-		// If the player is dead, disable the cursorLine and return.
-		if (!isMovementEnabled) 
-		{
-			cursorLine.enabled = false;
+		if (!cursorLine.enabled) {
+			cursorLine.enabled = true;
+			// Get a ray from the player to the point where the cursor is. Create a line between that and whatever is hit by that ray.
+			cursorLine.positionCount = 2;
 		}
-			
-		// Get a ray from the player to the point where the cursor is. Create a line between that and whatever is hit by that ray.
 
 		cursorLineRay.origin = FrontFacingTransform.position;
 		cursorLineRay.direction = FrontFacingTransform.forward;
@@ -147,10 +150,22 @@ public class PlayerMovementKeyboardAndMouse : MonoBehaviour
 
 		Physics.Raycast (cursorLineRay, out cursorLineHit);
 
-
-		cursorLine.SetPosition (0,FrontFacingTransform.position);
+		cursorLine.SetPosition (0, FrontFacingTransform.position);
 		cursorLine.SetPosition (1, cursorLineHit.point);
-		
+
+	}
+
+	// If the player is dead, disable the cursorLine and return.
+	private void DisableCursorLine()
+	{
+		if (cursorLine.enabled)
+		{
+			// Clear current LineRenderer.
+			cursorLine.positionCount = 0;
+
+			// Disable the LineRenderer.
+			cursorLine.enabled = false;
+		}
 	}
 
 	private void StepsAudio ()

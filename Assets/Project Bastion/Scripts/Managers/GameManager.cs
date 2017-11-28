@@ -2,8 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
-
+using UnityEditor.SceneManagement;
 
 public class GameManager : MonoBehaviour 
 {
@@ -22,7 +21,6 @@ public class GameManager : MonoBehaviour
 
 
 	private WaitForSeconds startWait;							// Used to delay the game start.
-	private WaitForSeconds endWait;								// Used to delay the game end.
 
 
 	// Use this for initialization
@@ -36,7 +34,6 @@ public class GameManager : MonoBehaviour
 
 		// Create references
 		startWait = new WaitForSeconds (startWaitTime);
-		endWait = new WaitForSeconds (gameOverTime);
 		playerHearthSlider = healthBar.GetComponentInChildren<Slider>();
 
 		// Instanciate the Player
@@ -109,12 +106,27 @@ public class GameManager : MonoBehaviour
 
 	private IEnumerator GameOver()
 	{
-		// Set the message to GameOver
+		// Set the message to GameOver.
 		ui_messageText.text = "You Died!";
 
-		// Disable Player controls;
+		// Disable Player controls.
 		playerManager.DisableControls();
 
-		yield return null;
+		// Stop game time at death.
+		Time.timeScale = 0;
+
+		// Wait for some seconds before reeboting the scene.
+		float pauseTime = Time.realtimeSinceStartup + gameOverTime;
+		Debug.Log ("Before wait.");
+		while (Time.realtimeSinceStartup < pauseTime)
+		{
+			yield return null;
+		}
+
+		// Start time after the end pause.
+		Time.timeScale = 1;
+
+		// Reload the current scene.
+		EditorSceneManager.LoadScene ( EditorSceneManager.GetActiveScene().name);
 	}
 }

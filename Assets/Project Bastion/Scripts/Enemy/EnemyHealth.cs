@@ -8,6 +8,7 @@ public class EnemyHealth : MonoBehaviour {
 	public bool isEnemyAlive = true;		// Is the enemy alive or dead?
 	public AudioClip enemyHitAudio;			// Clip to play when enemy is hit.
 	public AudioClip enemyDeathAudio;		// Clip to play when enemy is dead.
+	public EnemyManager enemyManager;		// Reference to the enemy Manager.
 
 	private Rigidbody enemyRigidBody;		// Reference to the Enemy Game Object.
 	private float currentHealth;			// The current health of the enemy.
@@ -88,18 +89,15 @@ public class EnemyHealth : MonoBehaviour {
 		// Enemy is dead!
 		isEnemyAlive = false;
 
-		// Make the collider a trigger so the shot won't hit the enemy anymore
-		enemyCollider.isTrigger = true;
-
-		// Disable the Enemy attack.
-		enemyAttack.enemyAttackEnabled = false;
-
 		// Start the enemy sinking
 		StartCoroutine (StartSinking());
 
 		// Set AudioSource clip to EnemyDeath and play
 		enemyAudio.clip = enemyDeathAudio;
 		enemyAudio.Play ();
+
+		// Disable Enemy movement and AI.
+		enemyManager.DisableEnemy();
 	}
 
 	IEnumerator StartSinking()

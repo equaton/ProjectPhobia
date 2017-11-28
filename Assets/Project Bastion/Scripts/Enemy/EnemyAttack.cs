@@ -11,7 +11,7 @@ public class EnemyAttack : MonoBehaviour {
 	private GameObject 	player;						// Reference to the Player GameObject.
 	private PlayerHealth playerHealth;				// Reference to the Player Health.
 	private bool contactWithPlayer;					// Is the Enemy touching the player?
-	private float timerForAttacks = 0;					// Timer to calculate when an attack can occurr.
+	private float timerForAttacks = 0;				// Timer to calculate when an attack can occurr.
 
 	// Use this for initialization
 	void Start () 
