@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Name: ChaserState
   m_EditorClassIdentifier: 
   actions:
-  - {fileID: 11400000, guid: 6ae7e1bd611cc452a80c2e3088090c9f, type: 2}
+  - {fileID: 11400000, guid: e6d27cc924f686d438c8288579a3ed16, type: 2}
   transition: []
   sceneGizmoColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
