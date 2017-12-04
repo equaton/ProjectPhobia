@@ -16,6 +16,8 @@ public class PlayerMovementKeyboardAndMouse : MonoBehaviour
 	public Ray ray;								// Ray of the vector of the cursor from the camera.
 	public Transform FrontFacingTransform;		// The transform of the front facing object, usually the gun holder object. It will rotate its x axys to follow the mouse.
 	public bool isMovementEnabled = true;		// Boolean used to eble and disable player movement and cursor pointer.
+	[Range(0.0f, 1.0f)]
+	public float viewingMovementMaximalDetriment;// Number from 0 to 1 to reduce the movement of the player when it is looking backwards.
 
 
 	private Rigidbody m_Rigidbody;              // Reference used to move the player.
@@ -24,7 +26,8 @@ public class PlayerMovementKeyboardAndMouse : MonoBehaviour
 	private float m_OriginalPitch;              // The pitch of the audio source at the start of the scene.
 	private ParticleSystem[] m_particleSystems; // References to all the particles systems used by the Player.
 	private Camera viewCamera;					// Reference to the main camera scene object.
-	private float viewCameraYRotation;			// Reference to the rotation of the Y Axis of the Camera
+	private float viewCameraYRotation;			// Reference to the rotation of the Y Axis of the Camera.
+	private float angleBwtViewAndMovement;		// Angle between the two vector of player movement and view.
 	private	Ray cursorLineRay;
 
 
@@ -32,35 +35,6 @@ public class PlayerMovementKeyboardAndMouse : MonoBehaviour
 	{
 		m_Rigidbody = GetComponent<Rigidbody> ();
 		viewCamera = Camera.main;
-	}
-
-
-	private void OnEnable ()
-	{
-		// When the tank is Player on, make sure it's not kinematic.
-		m_Rigidbody.isKinematic = false;
-
-		// We grab all the Particle systems child of that Player to be able to Stop/Play them on Deactivate/Activate
-		// It is needed because we move the Player when spawning it, and if the Particle System is playing while we do that
-		// it "think" it move from (0,0,0) to the spawn point, creating a huge trail of smoke.
-		m_particleSystems = GetComponentsInChildren<ParticleSystem>();
-		for (int i = 0; i < m_particleSystems.Length; ++i)
-		{
-			m_particleSystems[i].Play();
-		}
-	}
-
-
-	private void OnDisable ()
-	{
-		// When the player is turned off, set it to kinematic so it stops moving.
-		m_Rigidbody.isKinematic = true;
-
-		// Stop all particle system so it "reset" it's position to the actual one instead of thinking we moved when spawning.
-		for(int i = 0; i < m_particleSystems.Length; ++i)
-		{
-			m_particleSystems[i].Stop();
-		}
 	}
 
 
@@ -76,10 +50,6 @@ public class PlayerMovementKeyboardAndMouse : MonoBehaviour
 
 		// Store rotation of the view camera on the Y axis
  		viewCameraYRotation = viewCamera.transform.rotation.eulerAngles.y;
-
-		
-		// Get the cursor line cmponent from the Object
-		//cursorLine = GetComponent<LineRenderer>();
 
 	}
 
@@ -98,13 +68,12 @@ public class PlayerMovementKeyboardAndMouse : MonoBehaviour
 			// Declare a raycast hit to store information about what our raycast has hit
 			RaycastHit hit;
 			Physics.Raycast (ray, out hit);
-			
-			
+
 			//Make the GameObject look at the collision between the cursor and the ground.
 			transform.LookAt (hit.point);
-				
-			
-			
+
+			// Calculate the angle between the vector of movement and the vector of view of the player. The movement will be depending on this.
+			angleBwtViewAndMovement = Vector3.Angle(m_MovementVelocityValue, transform.forward);
 
 			// the Player will look at the point in all Axis, if the rotation needs to happen only on the Y axis, then set the onlyYRotation to false
 			if (onlyYRotation) {
@@ -114,7 +83,7 @@ public class PlayerMovementKeyboardAndMouse : MonoBehaviour
 			// Rotate the X axis of the Front facing transform to move the gun holder up and down to follow where the cursor is.
 			if (FrontFacingTransform) {
 				FrontFacingTransform.LookAt (hit.point);
-				//FrontFacingTransform.rotation = Quaternion.Euler (FrontFacingTransform.rotation.eulerAngles.y, 0, 0);
+
 			}
 
 			//Play walking audio
@@ -208,9 +177,17 @@ public class PlayerMovementKeyboardAndMouse : MonoBehaviour
 
 	private void Move ()
 	{
+		// Calculate impact of viewving angle on movement.
+		float movementImpairment = ((180 - angleBwtViewAndMovement) / 180 + viewingMovementMaximalDetriment);
+
+		// If the impairment value is bigger than 1, make it equal to one so that the player does not run more than it is supposed to.
+		if (movementImpairment > 1)
+		{
+			movementImpairment = 1;
+		}
 
 		// Apply this movement to the rigidbody's position.
-	    m_Rigidbody.MovePosition(m_Rigidbody.position + m_MovementVelocityValue  * Time.fixedDeltaTime);
+		m_Rigidbody.MovePosition(m_Rigidbody.position + m_MovementVelocityValue  * Time.fixedDeltaTime * movementImpairment);
 
 	}
 	

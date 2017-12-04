@@ -283,7 +283,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 219305829}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 553.5, y: 260.5, z: 0}
+  m_LocalPosition: {x: 555, y: 260.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1019495418}
@@ -1050,7 +1050,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1019495417}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -541.5, y: -248.5, z: 0}
+  m_LocalPosition: {x: -543, y: -248.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 634107748}
@@ -1243,21 +1243,6 @@ Prefab:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4895553171313728, guid: 4d3aa9f2038ed4154a968b50331052ff, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: -140.68
-      objectReference: {fileID: 0}
-    - target: {fileID: 108492319463832192, guid: 4d3aa9f2038ed4154a968b50331052ff,
-        type: 2}
-      propertyPath: m_DrawHalo
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 108492319463832192, guid: 4d3aa9f2038ed4154a968b50331052ff,
-        type: 2}
-      propertyPath: m_Flare
-      value: 
-      objectReference: {fileID: 12100000, guid: 9bdb18c49d114cb4300035184241aa39,
-        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4d3aa9f2038ed4154a968b50331052ff, type: 2}
   m_IsPrefabParent: 0
