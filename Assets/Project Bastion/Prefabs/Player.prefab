@@ -226,7 +226,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1352307869404946}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.2018805, y: 0.5, z: -3.0249805}
+  m_LocalPosition: {x: 9.115213, y: 0.5, z: 7.0227737}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4848537634281200}
@@ -260,7 +260,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a9cda7090c9d5764aaf3d0355caf73e8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -471,7 +471,7 @@ Light:
   serializedVersion: 8
   m_Type: 0
   m_Color: {r: 0.9117647, g: 0.8826363, b: 0.4894031, a: 1}
-  m_Intensity: 16.46
+  m_Intensity: 3.8
   m_Range: 19.4
   m_SpotAngle: 33.9
   m_CookieSize: 10
@@ -543,7 +543,7 @@ Light:
   serializedVersion: 8
   m_Type: 0
   m_Color: {r: 0.9117647, g: 0.8826363, b: 0.4894031, a: 1}
-  m_Intensity: 14.3
+  m_Intensity: 1.8
   m_Range: 19.4
   m_SpotAngle: 92.1
   m_CookieSize: 10
