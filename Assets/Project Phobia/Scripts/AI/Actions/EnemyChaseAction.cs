@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu (menuName = "EnemyAI/Actions/Chase")]
-public class ChaseAction : EnemyAction 
+[CreateAssetMenu (menuName = "EnemyAI/Action/Chase")]
+
+public class EnemyChaseAction : EnemyAction 
 {
 	public override void Act(StateController controller)
 	{
