@@ -248,7 +248,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentState: {fileID: 11400000, guid: 37167a737db69d644809288a909ad54f, type: 2}
-  remainState: {fileID: 0}
+  remainState: {fileID: 11400000, guid: 7779c4b29a4314645b4c08f060b750ce, type: 2}
   navMeshAgent: {fileID: 0}
   enemyTarget: {fileID: 0}
   stateTimeElapsed: 0

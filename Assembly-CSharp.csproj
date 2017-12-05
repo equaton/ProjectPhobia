@@ -110,6 +110,7 @@
      <Compile Include="Assets\Project Phobia\Scripts\Managers\GameManager.cs" />
      <Compile Include="Assets\Project Phobia\Scripts\Managers\PlayerManager.cs" />
      <Compile Include="Assets\Project Phobia\Scripts\Managers\SpawnManagers\SimpleEnemySpawnManager.cs" />
+     <Compile Include="Assets\Project Phobia\Scripts\Player\CalculateVelocity.cs" />
      <Compile Include="Assets\Project Phobia\Scripts\Player\PlayerHealth.cs" />
      <Compile Include="Assets\Project Phobia\Scripts\Player\PlayerMovementKeyboardAndMouse.cs" />
      <Compile Include="Assets\Project Phobia\Scripts\Player\PlayerShooting.cs" />

@@ -185,3 +185,4 @@ f4b175ffc1eeca85d2783436b4c764a7 Assembly-CSharp-firstpass.dll:UnityStandardAsse
 3317186872ccd21e7986b505e5fe8b12 Assembly-CSharp.dll:.SimpleEnemySpawnManager
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp-firstpass.dll:UnityStandardAssets.Utility.FPSCounter
 0f3d4bb7128a287827d041c696039525 Assembly-CSharp-firstpass.dll:UnityStandardAssets.Utility.AutoMobileShaderSwitch
+4a08995847143256ff8c1e3e2b3ce5bc Assembly-CSharp.dll:.CalculateVelocity
