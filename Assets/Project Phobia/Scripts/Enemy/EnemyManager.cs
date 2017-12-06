@@ -50,4 +50,5 @@ public class EnemyManager
 		aiActive = false;
 		controller.SetupAI (aiActive);
 	}
+		
 }

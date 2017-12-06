@@ -161,8 +161,8 @@ GameObject:
   - component: {fileID: 54913020688529304}
   - component: {fileID: 82650502976722742}
   - component: {fileID: 195030146271840680}
-  - component: {fileID: 136119848638054492}
-  - component: {fileID: 64515405307250070}
+  - component: {fileID: 136785608249517100}
+  - component: {fileID: 114314361323169794}
   m_Layer: 9
   m_Name: Monster
   m_TagString: Untagged
@@ -316,7 +316,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4231096397643278}
   - component: {fileID: 137029665905848996}
-  - component: {fileID: 64822741916043976}
   m_Layer: 9
   m_Name: Body_mesh
   m_TagString: Untagged
@@ -1576,8 +1575,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1136727662873458}
   m_LocalRotation: {x: 0, y: 0.9973843, z: -0, w: -0.0722808}
-  m_LocalPosition: {x: -0.6275721, y: 0.5, z: 1.451668}
-  m_LocalScale: {x: 1.3, y: 1.34, z: 1.38}
+  m_LocalPosition: {x: -2.957337, y: 0.5, z: 3.3564014}
+  m_LocalScale: {x: 2.2464, y: 2.3147495, z: 1.9319999}
   m_Children:
   - {fileID: 4231096397643278}
   - {fileID: 4074158802216732}
@@ -2293,7 +2292,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1426970964189778}
-  m_LocalRotation: {x: 0.6154347, y: 0.34819594, z: -0.6154342, w: 0.3481962}
+  m_LocalRotation: {x: 0.61543465, y: 0.3481959, z: -0.61543417, w: 0.34819618}
   m_LocalPosition: {x: 0.24865364, y: 0.66157883, z: 0.00000030517577}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -2630,34 +2629,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!64 &64515405307250070
-MeshCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1136727662873458}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 1
-  m_InflateMesh: 1
-  m_SkinWidth: 0.12
-  m_Mesh: {fileID: 4300014, guid: c230b9246bce7bf41bc8bd813b5e70e3, type: 3}
---- !u!64 &64822741916043976
-MeshCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1246297570516670}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 1
-  m_InflateMesh: 1
-  m_SkinWidth: 0.13
-  m_Mesh: {fileID: 4300014, guid: c230b9246bce7bf41bc8bd813b5e70e3, type: 3}
 --- !u!82 &82650502976722742
 AudioSource:
   m_ObjectHideFlags: 1
@@ -2677,7 +2648,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1.6470253
+  MinDistance: 1.5598137
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
@@ -2769,6 +2740,17 @@ MonoBehaviour:
   enemyAttackDamage: 20
   enemyTimeBetweenAttacks: 1
   enemyAttackEnabled: 1
+--- !u!114 &114314361323169794
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1136727662873458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47d83c86d55e2f9458cab88caa273caf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114678300628447328
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2806,19 +2788,19 @@ MonoBehaviour:
     enemyTarget: {fileID: 0}
     controller: {fileID: 0}
     aiActive: 1
---- !u!136 &136119848638054492
+--- !u!136 &136785608249517100
 CapsuleCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1136727662873458}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.7243472
-  m_Height: 2.6870937
+  m_Radius: 0.5
+  m_Height: 2.5839736
   m_Direction: 1
-  m_Center: {x: 0, y: 1.03, z: 0}
+  m_Center: {x: 0, y: 0.777062, z: 0}
 --- !u!137 &137029665905848996
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

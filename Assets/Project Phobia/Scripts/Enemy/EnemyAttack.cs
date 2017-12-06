@@ -13,12 +13,15 @@ public class EnemyAttack : MonoBehaviour {
 	private bool contactWithPlayer;					// Is the Enemy touching the player?
 	private float timerForAttacks = 0;				// Timer to calculate when an attack can occurr.
 
+	private Animator animator;						// Reference for enemy animator.
+
 	// Use this for initialization
 	void Start () 
 	{
 		// Get a reference to the Player GameObject.
 		player = GameObject.FindGameObjectWithTag("Player");
 		playerHealth = player.GetComponent <PlayerHealth>();
+		animator = GetComponent<Animator> ();
 	}
 
 	// Update is called once per frame
@@ -42,6 +45,9 @@ public class EnemyAttack : MonoBehaviour {
 					
 						// Inflict damage to the player.
 						playerHealth.TakeDamage (enemyAttackDamage);
+
+						// Animate the enemy attack.
+						animator.SetTrigger("isAttacking");
 
 						// Reset the timer for attacks.
 						timerForAttacks = 0;

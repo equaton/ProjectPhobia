@@ -90,7 +90,7 @@ public class PlayerShooting : MonoBehaviour
 
 		if (Physics.Raycast (shootRay, out gunHit, gunRange, shootableLayer)) {
 			// Try and find an EnemyHealth script on the gameobject hit.
-			EnemyHealth enemyHealth = gunHit.collider.GetComponent <EnemyHealth> ();
+			EnemyHealth enemyHealth = gunHit.collider.GetComponentInChildren <EnemyHealth> ();
 
 				// If the EnemyHealth component exist...
 				if(enemyHealth != null)

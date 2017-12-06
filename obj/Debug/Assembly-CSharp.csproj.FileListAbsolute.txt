@@ -25,7 +25,6 @@ D:\Unity local projects\Project Phobia\Temp\bin\Debug\Unity.UNetWeaver.dll
 D:\Unity local projects\Project Phobia\Temp\bin\Debug\Unity.CecilTools.dll
 D:\Unity local projects\Project Phobia\Temp\bin\Debug\Unity.Cecil.Pdb.dll
 D:\Unity local projects\Project Phobia\Temp\bin\Debug\Unity.Cecil.Mdb.dll
-D:\Unity local projects\Project Phobia\Temp\bin\Debug\Assembly-CSharp-firstpass.pdb
 D:\Unity local projects\Project Phobia\Temp\bin\Debug\UnityEngine.xml
 D:\Unity local projects\Project Phobia\Temp\bin\Debug\UnityEditor.xml
 D:\Unity local projects\Project Phobia\Temp\bin\Debug\UnityEngine.UI.xml

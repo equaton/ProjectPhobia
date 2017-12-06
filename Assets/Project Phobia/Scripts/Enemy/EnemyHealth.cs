@@ -19,6 +19,7 @@ public class EnemyHealth : MonoBehaviour {
 	private bool isSinking = false;			// Is the enemy starting to sink after death?
 	private float sinkSpeed = 2f;			// Speed of enemy sinking after death
 	private float deathTime = 2f;			// Time after the enemy is destroyed after death.
+	private Animator animator;				// Reference to the enemy animator.
 
 	// Use this for initialization
 	void Awake () {
@@ -32,6 +33,7 @@ public class EnemyHealth : MonoBehaviour {
 		enemyAttack = GetComponent<EnemyAttack>();
 		enemyAudio = GetComponentInChildren<AudioSource> ();
 		enemyCollider = GetComponentInChildren <Collider> ();
+		animator = GetComponent<Animator> ();
 
  	}
 	
@@ -65,8 +67,7 @@ public class EnemyHealth : MonoBehaviour {
 		hitParticles.Play();
 
 		// Remove health based on damage of bullet;
-		currentHealth -= damage; 
-
+		currentHealth -= damage;
 
 		// Check if the Enemy is dead.
 		if (currentHealth < 0 || currentHealth == 0) {
@@ -80,6 +81,9 @@ public class EnemyHealth : MonoBehaviour {
 			// Set AudioSource clip to EnemyHit and play
 			enemyAudio.clip = enemyHitAudio;
 			enemyAudio.Play ();
+
+			// Play is hit animation.
+			animator.SetTrigger("isHit");
 		}
 
 	}
@@ -98,6 +102,9 @@ public class EnemyHealth : MonoBehaviour {
 
 		// Disable Enemy movement and AI.
 		enemyManager.DisableEnemy();
+
+		// Play death animation.
+		animator.SetBool("isAlive", false);
 	}
 
 	IEnumerator StartSinking()
