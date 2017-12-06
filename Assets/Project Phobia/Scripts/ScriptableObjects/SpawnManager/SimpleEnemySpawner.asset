@@ -15,6 +15,10 @@ MonoBehaviour:
     type: 2}
   enemyManager:
     enemyInstance: {fileID: 0}
-  enemyPrefab: {fileID: 1839187996808650, guid: 3904b7d9df97f46f493a5f95a5be8b74,
+    enemyNavAgent: {fileID: 0}
+    enemyTarget: {fileID: 0}
+    controller: {fileID: 0}
+    aiActive: 0
+  enemyPrefab: {fileID: 1136727662873458, guid: f1bb80b0c1e9a614d890aeaa0f4faeed,
     type: 2}
   timebetweenSpawns: 5
