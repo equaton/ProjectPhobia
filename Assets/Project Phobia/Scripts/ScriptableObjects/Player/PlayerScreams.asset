@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6628f917cacad8c48889a5ad1e4d4d85, type: 3}
+  m_Name: PlayerScreams
+  m_EditorClassIdentifier: 
+  soundCollection:
+  - {fileID: 8300000, guid: 4cbe6ed783f25f04d806ac4c4f7eb760, type: 3}
+  - {fileID: 8300000, guid: f39741da77ce89c4d9edd703780b65b0, type: 3}
+  - {fileID: 8300000, guid: 3465354c344d03c4ab6ed5a691069a6c, type: 3}
+  - {fileID: 8300000, guid: 34b7c00d772917440b190afb8971ed69, type: 3}

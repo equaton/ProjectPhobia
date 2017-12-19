@@ -358,7 +358,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   spreadCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -382,7 +382,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
 --- !u!82 &82334077171186476
 AudioSource:
   m_ObjectHideFlags: 1
@@ -582,7 +582,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb2ca4792c24d96448a40c9369748427, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Speed: 12
+  m_Speed: 8.93
   m_MovementAudio: {fileID: 82334077171186476}
   m_PlayerWalking: {fileID: 8300000, guid: aa6430dc92a010541b66a0b86cd9815d, type: 3}
   m_PlayerIdle: {fileID: 0}
@@ -665,13 +665,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingHealth: 100
   isPlayerAlive: 1
-  playerHitAudio: {fileID: 0}
-  playerDeathAudio: {fileID: 0}
+  playerHits: {fileID: 11400000, guid: 9fcc4936fb70d2c41b2b1df77093089f, type: 2}
+  playerDeathAudio: {fileID: 8300000, guid: f6e30e0d9a65dc2429bc1643e4150001, type: 3}
   playerHearthSlider: {fileID: 0}
   playerHitFlashImage: {fileID: 0}
   HitFlashAlpha: 80
   HitFlashFadeTime: 5
   HitFlashColor: {r: 255, g: 0, b: 0, a: 1}
+  playerAudio: {fileID: 0}
 --- !u!120 &120610134455819142
 LineRenderer:
   m_ObjectHideFlags: 1

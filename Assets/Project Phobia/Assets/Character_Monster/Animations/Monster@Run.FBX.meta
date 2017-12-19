@@ -186,12 +186,7 @@ ModelImporter:
     7400000: Run
     9500000: //RootNode
     13700000: Body_mesh
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: 'Material #1'
-    second: {fileID: 2100000, guid: d338b3b4042faa44b8d596df7c92b73c, type: 2}
+  externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 1
@@ -230,7 +225,7 @@ ModelImporter:
       loop: 0
       hasAdditiveReferencePose: 0
       loopTime: 1
-      loopBlend: 0
+      loopBlend: 1
       loopBlendOrientation: 0
       loopBlendPositionY: 0
       loopBlendPositionXZ: 0
