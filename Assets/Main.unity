@@ -121,15 +121,15 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4360045174113194, guid: f1bb80b0c1e9a614d890aeaa0f4faeed, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -2.957337
+      value: 6.65
       objectReference: {fileID: 0}
     - target: {fileID: 4360045174113194, guid: f1bb80b0c1e9a614d890aeaa0f4faeed, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0.5
+      value: -1.06
       objectReference: {fileID: 0}
     - target: {fileID: 4360045174113194, guid: f1bb80b0c1e9a614d890aeaa0f4faeed, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 3.3564014
+      value: 2.99
       objectReference: {fileID: 0}
     - target: {fileID: 4360045174113194, guid: f1bb80b0c1e9a614d890aeaa0f4faeed, type: 2}
       propertyPath: m_LocalRotation.x
@@ -169,6 +169,16 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1136727662873458, guid: f1bb80b0c1e9a614d890aeaa0f4faeed, type: 2}
       propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 82650502976722742, guid: f1bb80b0c1e9a614d890aeaa0f4faeed,
+        type: 2}
+      propertyPath: panLevelCustomCurve.m_RotationOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 82650502976722742, guid: f1bb80b0c1e9a614d890aeaa0f4faeed,
+        type: 2}
+      propertyPath: reverbZoneMixCustomCurve.m_RotationOrder
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
