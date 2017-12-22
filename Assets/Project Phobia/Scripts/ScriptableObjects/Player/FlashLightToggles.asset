@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6628f917cacad8c48889a5ad1e4d4d85, type: 3}
+  m_Name: FlashLightToggles
+  m_EditorClassIdentifier: 
+  soundCollection:
+  - {fileID: 8300000, guid: 22d7039cada831e479b033d8ab8c0a57, type: 3}
+  - {fileID: 8300000, guid: 14f3e604515425240b7346a79e10ef93, type: 3}
