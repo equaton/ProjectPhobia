@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class PlayerShooting : MonoBehaviour
 {
-	public AudioSource m_ShootingAudio;			// Reference to the audio source used to play the shooting audio. 
 	public AudioClip m_FireClip;				// Audio that plays when each shot is fired.
 	public Light gunLight;   					// Reference to the gun light. 
 	public float reloadingTime = 0.15f;			// How much time needed to fire another time.
@@ -16,6 +15,7 @@ public class PlayerShooting : MonoBehaviour
 	public bool	shootingEnabled = true;				// Can the Player shoot?
 
 	private string m_FireButton;				// The input axis that is used for launching projectiles.
+	private AudioSource m_ShootingAudio;		// Reference to the audio source used to play the shooting audio. 
 	private float timer;						// A timer to decide when to fire.
 	private float effectsDisplayTime = 0.15f;   // The proportion of the timeBetweenBullets that the effects will display for.
 	private RaycastHit gunHit;					// Reference to the Raycast used to calculate the ray of the shooting.	
@@ -29,6 +29,9 @@ public class PlayerShooting : MonoBehaviour
 
 		// Get a reference to the player health.
 		playerHealth = GetComponentInParent<PlayerHealth>();
+
+		// Get a reference to the player AudioSource.
+		m_ShootingAudio = GetComponentInParent<AudioSource>();
 
 	}
 

@@ -5,7 +5,6 @@ using UnityEngine;
 public class PlayerMovementKeyboardAndMouse : MonoBehaviour
 {
 	public float m_Speed = 12f;                 // How fast the player moves forward and back.
-	public AudioSource m_MovementAudio;         // Reference to the audio source used to play steps sounds. NB: different to the shooting audio source.
 	public AudioClip m_PlayerWalking;           // Audio to play when the player is moving.
 	public AudioClip m_PlayerIdle;              // Audio to play when the player is idle.
 	public float m_PitchRange = 0.2f;           // The amount by which the pitch of the steps noises can vary.
@@ -18,6 +17,7 @@ public class PlayerMovementKeyboardAndMouse : MonoBehaviour
 	public bool isMovementEnabled = true;		// Boolean used to eble and disable player movement and cursor pointer.
 	[Range(0.0f, 1.0f)]
 	public float viewingMovementMaximalDetriment;// Number from 0 to 1 to reduce the movement of the player when it is looking backwards.
+	public AudioSource m_MovementAudio;         // Reference to the audio source used to play steps sounds. NB: different to the shooting audio source.
 
 
 	private Rigidbody m_Rigidbody;              // Reference used to move the player.
