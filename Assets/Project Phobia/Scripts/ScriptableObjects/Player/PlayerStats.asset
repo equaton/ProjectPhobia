@@ -14,3 +14,5 @@ MonoBehaviour:
   lookRange: 40
   shootingNoiseRadius: 40
   walikngNoiseRadius: 2
+  playerMaxSpeed: 7.9
+  sneakingMovementReductionRate: 0.33

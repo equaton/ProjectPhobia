@@ -32,6 +32,7 @@ GameObject:
   - component: {fileID: 114191333932802612}
   - component: {fileID: 114212637222012418}
   - component: {fileID: 114703925934717186}
+  - component: {fileID: 114751024162582028}
   m_Layer: 11
   m_Name: Player
   m_TagString: Player
@@ -600,7 +601,6 @@ MonoBehaviour:
   m_Speed: 8.93
   m_PlayerWalking: {fileID: 8300000, guid: aa6430dc92a010541b66a0b86cd9815d, type: 3}
   m_PlayerIdle: {fileID: 0}
-  m_PitchRange: 0.2
   onlyYRotation: 1
   cursorLine: {fileID: 120610134455819142}
   m_MovementVelocityValue: {x: 0, y: 0, z: 0}
@@ -632,6 +632,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   soundColliderAI: {fileID: 136484955774616502}
+  ColliderRadiusVelocitySmoothTime: 0.3
 --- !u!114 &114260990441744834
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -659,6 +660,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerStats: {fileID: 11400000, guid: 1b43fdaf7346a0b4cae36af4896fd055, type: 2}
+--- !u!114 &114751024162582028
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1352307869404946}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0035e17f922a1eb45b2553473d1940b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isSneaking: 0
 --- !u!114 &114911850862940504
 MonoBehaviour:
   m_ObjectHideFlags: 1

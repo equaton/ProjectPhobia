@@ -12,6 +12,7 @@ public class PlayerManager
 {
 
 	public Transform spawnPoint;								// Point where to spawn the Player in.
+	public RawImage sneakImage;									// Reference to the sneak icon in the UI.
 	[HideInInspector] public GameObject playerInstance;			// Referenece to the player instance.
 	public static GameManager gameManager;
 	[HideInInspector] public PlayerHealth playerhealth;			// Reference to the Player's health script.
@@ -61,6 +62,12 @@ public class PlayerManager
 		{
 			playerShooting.shootingEnabled = true;
 		}
+	}
+
+	public void Sneak(bool sneakStance)
+	{
+		sneakImage.enabled = sneakStance;
+
 	}
 
 }

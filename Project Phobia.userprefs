@@ -1,22 +1,11 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Project Phobia\Scripts\AI\Decisions\HearingDecision.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Project Phobia\Scripts\MonoBehaviour\Player\PlayerSneak.cs">
     <Files>
-      <File FileName="Assets\Project Phobia\Scripts\MonoBehaviour\Enemy\StateController.cs" Line="13" Column="2" />
-      <File FileName="Assets\Project Phobia\Scripts\AI\EnemyState.cs" Line="1" Column="1" />
-      <File FileName="Assets\Project Phobia\Scripts\AI\Actions\EnemyWanderAction.cs" Line="21" Column="5" />
-      <File FileName="Assets\Project Phobia\Scripts\MonoBehaviour\Enemy\EnemyStats.cs" Line="8" Column="1" />
-      <File FileName="Assets\Project Phobia\Scripts\AI\Decisions\VisualSpottedDecision.cs" Line="5" Column="47" />
-      <File FileName="Assets\Project Phobia\Scripts\AI\Decisions\WaitFor5SecondsDecision.cs" Line="33" Column="54" />
-      <File FileName="Assets\Project Phobia\Scripts\AI\Decisions\HearingDecision.cs" Line="18" Column="96" />
-      <File FileName="Assets\Project Phobia\Scripts\MonoBehaviour\Player\PlayerShooting.cs" Line="63" Column="3" />
-      <File FileName="Assets\Project Phobia\Scripts\MonoBehaviour\Player\PlayerMovementKeyboardAndMouse.cs" Line="20" Column="149" />
-      <File FileName="Assets\Project Phobia\Scripts\MonoBehaviour\Player\PlayerStats.cs" Line="12" Column="1" />
-      <File FileName="Assets\Project Phobia\Scripts\MonoBehaviour\Managers\GameManager.cs" Line="14" Column="77" />
-      <File FileName="Assets\Project Phobia\Scripts\MonoBehaviour\Player\PlayerManager.cs" Line="18" Column="96" />
+      <File FileName="Assets\Project Phobia\Scripts\MonoBehaviour\Player\PlayerMovementKeyboardAndMouse.cs" Line="197" Column="3" />
+      <File FileName="Assets\Project Phobia\Scripts\MonoBehaviour\Player\PlayerManager.cs" Line="69" Column="36" />
       <File FileName="Assets\Project Phobia\Scripts\MonoBehaviour\Player\PlayerNoiseMaker.cs" Line="30" Column="1" />
-      <File FileName="Assets\Project Phobia\Scripts\MonoBehaviour\Enemy\EnemyHealth.cs" Line="1" Column="1" />
-      <File FileName="Assets\Project Phobia\Scripts\MonoBehaviour\Player\PlayerStatistics.cs" Line="9" Column="1" />
+      <File FileName="Assets\Project Phobia\Scripts\MonoBehaviour\Player\PlayerSneak.cs" Line="28" Column="76" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

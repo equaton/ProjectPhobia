@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class PlayerMovementKeyboardAndMouse : MonoBehaviour
 {
-	public float m_Speed = 12f;                 // How fast the player moves forward and back.
+	public float m_Speed;                       // How fast the player moves forward and back.
+	public float sneakingVelocityReduction;		// How much does sneaking reduce the movement?
 	public AudioClip m_PlayerWalking;           // Audio to play when the player is moving.
 	public AudioClip m_PlayerIdle;              // Audio to play when the player is idle.
-	public float m_PitchRange = 0.2f;           // The amount by which the pitch of the steps noises can vary.
 	public bool onlyYRotation = true;			// Make the rotation of the Player to happen only on the Y Axis, otherwise allow rotation on X axis too.
     public LineRenderer cursorLine; 			// Reference to the LineRendered component in the Player object
 	[HideInInspector]
@@ -18,6 +18,8 @@ public class PlayerMovementKeyboardAndMouse : MonoBehaviour
 	[Range(0.0f, 1.0f)]
 	public float viewingMovementMaximalDetriment;// Number from 0 to 1 to reduce the movement of the player when it is looking backwards.
 	public AudioSource m_MovementAudio;         // Reference to the audio source used to play steps sounds. NB: different to the shooting audio source.
+	[HideInInspector]
+	public bool isSneaking;						// Is the plater sneaking?
 
 
 	private Rigidbody m_Rigidbody;              // Reference used to move the player.
@@ -29,12 +31,18 @@ public class PlayerMovementKeyboardAndMouse : MonoBehaviour
 	private float viewCameraYRotation;			// Reference to the rotation of the Y Axis of the Camera.
 	private float angleBwtViewAndMovement;		// Angle between the two vector of player movement and view.
 	private	Ray cursorLineRay;
+	private float m_PitchRange = 0.2f;           // The amount by which the pitch of the steps noises can vary.
+	private float sneakingRatio;
+
 
 
 	private void Awake ()
 	{
+		m_Speed = GetComponent<PlayerStatistics>().playerStats.playerMaxSpeed;
+		sneakingVelocityReduction = GetComponent<PlayerStatistics>().playerStats.sneakingMovementReductionRate;
 		m_Rigidbody = GetComponent<Rigidbody> ();
 		viewCamera = Camera.main;
+		isSneaking = GetComponent<PlayerSneak> ().isSneaking;
 	}
 
 
@@ -186,8 +194,16 @@ public class PlayerMovementKeyboardAndMouse : MonoBehaviour
 			movementImpairment = 1;
 		}
 
+
+		// Apply reduction of movement if the player is sneaking.
+		if (isSneaking) {
+			 sneakingRatio = sneakingVelocityReduction;
+		} else {
+			 sneakingRatio = 1;
+		}
+			
 		// Apply this movement to the rigidbody's position.
-		m_Rigidbody.MovePosition(m_Rigidbody.position + m_MovementVelocityValue  * Time.fixedDeltaTime * movementImpairment);
+		m_Rigidbody.MovePosition(m_Rigidbody.position + m_MovementVelocityValue  * Time.fixedDeltaTime * movementImpairment * sneakingRatio);
 
 	}
 	

@@ -169,6 +169,7 @@
      <Compile Include="Assets\Project Phobia\Scripts\MonoBehaviour\Player\PlayerMovementKeyboardAndMouse.cs" />
      <Compile Include="Assets\Project Phobia\Scripts\MonoBehaviour\Player\PlayerNoiseMaker.cs" />
      <Compile Include="Assets\Project Phobia\Scripts\MonoBehaviour\Player\PlayerShooting.cs" />
+     <Compile Include="Assets\Project Phobia\Scripts\MonoBehaviour\Player\PlayerSneak.cs" />
      <Compile Include="Assets\Project Phobia\Scripts\MonoBehaviour\Player\PlayerStatistics.cs" />
      <Compile Include="Assets\Project Phobia\Scripts\MonoBehaviour\Player\PlayerStats.cs" />
      <Compile Include="Assets\Project Phobia\Scripts\MonoBehaviour\SoundCollection.cs" />
