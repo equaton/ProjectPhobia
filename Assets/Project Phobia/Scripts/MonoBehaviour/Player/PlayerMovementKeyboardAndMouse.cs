@@ -67,7 +67,7 @@ public class PlayerMovementKeyboardAndMouse : MonoBehaviour
 			Ray ray = viewCamera.ScreenPointToRay (new Vector3 (Input.mousePosition.x, Input.mousePosition.y, viewCamera.transform.position.y));
 			// Declare a raycast hit to store information about what our raycast has hit
 			RaycastHit hit;
-			Physics.Raycast (ray, out hit);
+			Physics.Raycast (ray, out hit, Mathf.Infinity, 1 << 10);
 
 			//Make the GameObject look at the collision between the cursor and the ground.
 			transform.LookAt (hit.point);

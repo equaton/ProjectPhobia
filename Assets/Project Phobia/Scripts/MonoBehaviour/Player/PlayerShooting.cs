@@ -12,7 +12,8 @@ public class PlayerShooting : MonoBehaviour
 	public float gunRange = 100f;				// How far away the gun is shooting.
 	public LayerMask shootableLayer;			// What is the layer the player can shoot to?
 	public LineRenderer gunLine;				// The Line renderer that will create the shooting line.
-	public bool	shootingEnabled = true;				// Can the Player shoot?
+	public bool	shootingEnabled = true;			// Can the Player shoot?
+	public CapsuleCollider shootingAICollider;				// Reference to the Colldier in the Player object to be used as Collider to trigger Enemy AI events.
 
 	private string m_FireButton;				// The input axis that is used for launching projectiles.
 	private AudioSource m_ShootingAudio;		// Reference to the audio source used to play the shooting audio. 
@@ -59,6 +60,7 @@ public class PlayerShooting : MonoBehaviour
 		}
 
 	}
+		
 
 	public void DisableEffects ()
 	{
@@ -85,6 +87,10 @@ public class PlayerShooting : MonoBehaviour
 
 		// Activate the light of the gun
 		gunLight.enabled = true;
+
+		//"Create a sound" activating and deactivating the sound collider.
+		shootingAICollider.radius = 300;
+		shootingAICollider.enabled = true;
 
 		//Create a Raycast from the FireTransform
 		shootRay.origin = transform.position;

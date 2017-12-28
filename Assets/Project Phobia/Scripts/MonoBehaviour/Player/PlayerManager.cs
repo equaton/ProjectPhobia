@@ -15,6 +15,7 @@ public class PlayerManager
 	[HideInInspector] public GameObject playerInstance;			// Referenece to the player instance.
 	public static GameManager gameManager;
 	[HideInInspector] public PlayerHealth playerhealth;			// Reference to the Player's health script.
+	public PlayerStats playerStats; 							// The reference to the Player Stats Scriptable Object.
 
 	private PlayerMovementKeyboardAndMouse playerMovement; 		// Reference to the Player's moving script.
 	private PlayerShooting playerShooting;						// Reference to the Plater's Shooting script.

@@ -142,6 +142,10 @@
      <Compile Include="Assets\Imported Assets\Standard Assets\Utility\WaypointCircuit.cs" />
      <Compile Include="Assets\Imported Assets\Standard Assets\Utility\WaypointProgressTracker.cs" />
      <Compile Include="Assets\Project Phobia\Scripts\AI\Actions\EnemyChaseAction.cs" />
+     <Compile Include="Assets\Project Phobia\Scripts\AI\Actions\EnemyWanderAction.cs" />
+     <Compile Include="Assets\Project Phobia\Scripts\AI\Decisions\HearingDecision.cs" />
+     <Compile Include="Assets\Project Phobia\Scripts\AI\Decisions\VisualSpottedDecision.cs" />
+     <Compile Include="Assets\Project Phobia\Scripts\AI\Decisions\WaitFor5SecondsDecision.cs" />
      <Compile Include="Assets\Project Phobia\Scripts\AI\EnemyAction.cs" />
      <Compile Include="Assets\Project Phobia\Scripts\AI\EnemyDecision.cs" />
      <Compile Include="Assets\Project Phobia\Scripts\AI\EnemyState.cs" />
@@ -152,6 +156,7 @@
      <Compile Include="Assets\Project Phobia\Scripts\MonoBehaviour\Enemy\EnemyHealth.cs" />
      <Compile Include="Assets\Project Phobia\Scripts\MonoBehaviour\Enemy\EnemyManager.cs" />
      <Compile Include="Assets\Project Phobia\Scripts\MonoBehaviour\Enemy\EnemyMovement.cs" />
+     <Compile Include="Assets\Project Phobia\Scripts\MonoBehaviour\Enemy\EnemyStats.cs" />
      <Compile Include="Assets\Project Phobia\Scripts\MonoBehaviour\Enemy\StateController.cs" />
      <Compile Include="Assets\Project Phobia\Scripts\MonoBehaviour\Items\PickUp.cs" />
      <Compile Include="Assets\Project Phobia\Scripts\MonoBehaviour\Managers\EnemySpawnManager.cs" />
@@ -162,7 +167,10 @@
      <Compile Include="Assets\Project Phobia\Scripts\MonoBehaviour\Player\PlayerHealth.cs" />
      <Compile Include="Assets\Project Phobia\Scripts\MonoBehaviour\Player\PlayerManager.cs" />
      <Compile Include="Assets\Project Phobia\Scripts\MonoBehaviour\Player\PlayerMovementKeyboardAndMouse.cs" />
+     <Compile Include="Assets\Project Phobia\Scripts\MonoBehaviour\Player\PlayerNoiseMaker.cs" />
      <Compile Include="Assets\Project Phobia\Scripts\MonoBehaviour\Player\PlayerShooting.cs" />
+     <Compile Include="Assets\Project Phobia\Scripts\MonoBehaviour\Player\PlayerStatistics.cs" />
+     <Compile Include="Assets\Project Phobia\Scripts\MonoBehaviour\Player\PlayerStats.cs" />
      <Compile Include="Assets\Project Phobia\Scripts\MonoBehaviour\SoundCollection.cs" />
      <Compile Include="Assets\Project Phobia\Scripts\Unused for now\FieldOfView.cs" />
      <Compile Include="Assets\Project Phobia\Scripts\Unused for now\PlayerMovementKeyboard.cs" />

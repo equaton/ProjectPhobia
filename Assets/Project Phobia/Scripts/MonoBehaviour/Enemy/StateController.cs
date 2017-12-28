@@ -7,11 +7,11 @@ public class StateController : MonoBehaviour {
 
 	public EnemyState currentState;
 	public EnemyState remainState;
+	public EnemyStats enemyStats; 
 
 	[HideInInspector] public NavMeshAgent navMeshAgent;			// Reference to the enemy navMeshAgent;
-	[HideInInspector] public Transform enemyTarget;				// Reference to the enemy target;
+	 public Transform enemyTarget;				// Reference to the enemy target;
 	[HideInInspector] public float stateTimeElapsed;			// Timer;
-
 
 	private bool isAiActive;									// Is AI active?
 

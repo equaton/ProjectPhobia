@@ -1562,7 +1562,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1136727662873458}
   m_LocalRotation: {x: 0, y: 0.9973843, z: -0, w: -0.0722808}
-  m_LocalPosition: {x: -2.957337, y: 0.5, z: 3.3564014}
+  m_LocalPosition: {x: 6.65, y: -1.06, z: 2.99}
   m_LocalScale: {x: 2.2464, y: 2.3147495, z: 1.9319999}
   m_Children:
   - {fileID: 4231096397643278}
@@ -2684,7 +2684,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   spreadCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -2708,7 +2708,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
 --- !u!95 &95744983118073734
 Animator:
   serializedVersion: 3
@@ -2764,6 +2764,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentState: {fileID: 11400000, guid: 37167a737db69d644809288a909ad54f, type: 2}
   remainState: {fileID: 11400000, guid: 7779c4b29a4314645b4c08f060b750ce, type: 2}
+  enemyStats: {fileID: 11400000, guid: 5baa8da01baffca49a6221dc0a1d7565, type: 2}
   navMeshAgent: {fileID: 0}
   enemyTarget: {fileID: 0}
   stateTimeElapsed: 0
