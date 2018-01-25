@@ -11,6 +11,22 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 1352307869404946}
   m_IsPrefabParent: 1
+--- !u!1 &1207973817771874
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4610101223739558}
+  - component: {fileID: 65970816073085854}
+  m_Layer: 13
+  m_Name: LightAI
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1352307869404946
 GameObject:
   m_ObjectHideFlags: 0
@@ -204,6 +220,19 @@ Transform:
   m_Father: {fileID: 4848537634281200}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!4 &4610101223739558
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1207973817771874}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4848537634281200}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4777493332477382
 Transform:
   m_ObjectHideFlags: 1
@@ -231,6 +260,7 @@ Transform:
   - {fileID: 4013098158511272}
   - {fileID: 4569863578683552}
   - {fileID: 4016495406858582}
+  - {fileID: 4610101223739558}
   m_Father: {fileID: 4895553171313728}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -319,6 +349,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 116
   m_CollisionDetection: 0
+--- !u!65 &65970816073085854
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1207973817771874}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 8.013233, y: 1, z: 17.416168}
+  m_Center: {x: 0.82810795, y: 0, z: 8.208105}
 --- !u!82 &82334077171186476
 AudioSource:
   m_ObjectHideFlags: 1
@@ -599,6 +641,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Speed: 8.93
+  sneakingVelocityReduction: 0
   m_PlayerWalking: {fileID: 8300000, guid: aa6430dc92a010541b66a0b86cd9815d, type: 3}
   m_PlayerIdle: {fileID: 0}
   onlyYRotation: 1
@@ -608,6 +651,7 @@ MonoBehaviour:
   isMovementEnabled: 1
   viewingMovementMaximalDetriment: 0.4
   m_MovementAudio: {fileID: 82651059746362674}
+  isSneaking: 0
 --- !u!114 &114191333932802612
 MonoBehaviour:
   m_ObjectHideFlags: 1

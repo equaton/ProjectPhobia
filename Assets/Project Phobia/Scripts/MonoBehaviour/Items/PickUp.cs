@@ -10,7 +10,6 @@ public class PickUp : MonoBehaviour {
 	void OnTriggerEnter(Collider other)
 	{
 
-		Debug.Log ("collision detected!");
 		//is the Collider hit the Player's?
 		if (other.gameObject.tag == "Player") 
 		{
