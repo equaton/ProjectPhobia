@@ -16,7 +16,6 @@ public class SimpleEnemySpawnManager : EnemySpawnManager {
 	// Keep Spawning monsters
 	public override void StartSpawningEnemies()
 	{
-		Debug.Log ("Starting coroutine for enemy spawn");
 		SpawnMonster (enemyPrefab, enemySpawnPoint);
 	}
 		

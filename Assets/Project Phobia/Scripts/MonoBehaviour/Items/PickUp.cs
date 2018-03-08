@@ -17,7 +17,7 @@ public class PickUp : MonoBehaviour {
 			GameManager.gameManager.collectedVictoryIteam = true;
 
 			// destroy the GameObject.
-			GameObject.Destroy (this);
+			Destroy(gameObject);
 		}
 	} 
 }

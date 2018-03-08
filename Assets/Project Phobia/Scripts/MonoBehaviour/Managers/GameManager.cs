@@ -3,15 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.AI;
 
 public class GameManager : MonoBehaviour 
 {
 
 	public Text ui_messageText;									// Reference to the text on the canvas to communicate to the user. 
+	public Text ui_score;										// Reference to the text on the canvas to communicate to the score. 
 	public float startWaitTime = 4f; 							// Amount of time the game waits before starting.
 	public float gameOverTime = 5f;								// Amount of time the game waits before loading after Game Over;
 	public PlayerManager playerManager;							// Reference to the playerManager.
 	public GameObject playerPrefab;								// The player prefab to instanciate.
+	public GameObject pickupitem;								// The pickup item prefab
 	public CameraControl cameraControl;							// Reference to the Camera controller.
 	[HideInInspector] public static GameManager gameManager;	// Reference to this GameManager. Used to access from other scripts.
 	public GameObject healthBar;								// Reference to the Healtbar GameObject.
@@ -19,6 +22,7 @@ public class GameManager : MonoBehaviour
 	public Image playerHitFlashImage;							// Reference to the image that will appear when the player is hit.
 	public EnemySpawnManager spawnManager;						// Reference to the Enemy Spawn Manager.
 	public bool collectedVictoryIteam = false;					// Did the player collected the victory item?
+	public float playerpoints = 0;								// Player points
 
 
 	private WaitForSeconds startWait;							// Used to delay the game start.
@@ -82,6 +86,7 @@ public class GameManager : MonoBehaviour
 
 		//Make a welcome Text appear.
 		ui_messageText.text = "Project Phobia";
+		ui_score.text = playerpoints.ToString();
 
 		//Disable the Slider
 		healthBar.SetActive( false);
@@ -94,18 +99,33 @@ public class GameManager : MonoBehaviour
 		//Enable the Slider
 		healthBar.SetActive (true);
 
-		// Start to spawn enemies.
 		spawnManager.StartSpawningEnemies();
-
 
 	}
 
 
 	private IEnumerator RoundPlaying()
 	{
+
 		// Continue to play until the player is still alive
-		while (playerManager.playerhealth.isPlayerAlive == true && !collectedVictoryIteam ) 
+		while (playerManager.playerhealth.isPlayerAlive == true ) 
 		{
+			 
+
+			//If the pickup item is collected, add a point and generate a new one
+			if (collectedVictoryIteam == true) 
+			{
+
+
+				Instantiate(pickupitem,GetRandomLocation(),playerManager.spawnPoint.rotation);
+				spawnManager.StartSpawningEnemies();
+
+				playerpoints = playerpoints + 1;
+				ui_score.text = playerpoints.ToString();
+				collectedVictoryIteam = false;
+			}
+
+
 			yield return null;
 		}
 	}
@@ -163,5 +183,23 @@ public class GameManager : MonoBehaviour
 
 		// Reload the current scene.
 		SceneManager.LoadScene ( SceneManager.GetActiveScene().name);
+
 	}
+
+	// Generate random location for pickup item
+	private Vector3 GetRandomLocation ()
+	{
+
+		NavMeshTriangulation navMeshData =	NavMesh.CalculateTriangulation ();
+
+		// Pick the first indice of a random triangle in the nav mesh
+		int t = Random.Range (0, navMeshData.indices.Length - 3);
+
+		// Select a random point on it
+		Vector3 point = Vector3.Lerp (navMeshData.vertices [navMeshData.indices [t]], navMeshData.vertices [navMeshData.indices [t + 1]], Random.value);
+		Vector3.Lerp (point, navMeshData.vertices [navMeshData.indices [t + 2]], Random.value);
+
+		return point;
+	}
+
 }

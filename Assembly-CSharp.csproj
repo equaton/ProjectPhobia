@@ -162,7 +162,9 @@
      <Compile Include="Assets\Project Phobia\Scripts\MonoBehaviour\Items\PickUp.cs" />
      <Compile Include="Assets\Project Phobia\Scripts\MonoBehaviour\Managers\EnemySpawnManager.cs" />
      <Compile Include="Assets\Project Phobia\Scripts\MonoBehaviour\Managers\GameManager.cs" />
+     <Compile Include="Assets\Project Phobia\Scripts\MonoBehaviour\Managers\SpawnManagers\MultipleEnemySpawner.cs" />
      <Compile Include="Assets\Project Phobia\Scripts\MonoBehaviour\Managers\SpawnManagers\SimpleEnemySpawnManager.cs" />
+     <Compile Include="Assets\Project Phobia\Scripts\MonoBehaviour\Managers\SpawnManagers\SimpleEnemySpawnManager1.cs" />
      <Compile Include="Assets\Project Phobia\Scripts\MonoBehaviour\Player\CalculateVelocity.cs" />
      <Compile Include="Assets\Project Phobia\Scripts\MonoBehaviour\Player\FlashLight.cs" />
      <Compile Include="Assets\Project Phobia\Scripts\MonoBehaviour\Player\PlayerHealth.cs" />

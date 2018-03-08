@@ -24,7 +24,6 @@ public class LightDecision : EnemyDecision {
 		//If it is hit
 		if (lightCollider.Length != 0) {
 			startLightningThreshold = Mathf.SmoothDamp (startLightningThreshold, 1.1f, ref startLightningVeloocity, 1f);
-			Debug.Log (startLightningThreshold);
 
 			if (startLightningThreshold > 1) {
 				controller.enemyTarget = lightCollider [0].transform;

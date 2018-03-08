@@ -1,16 +1,16 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Project Phobia\Scripts\MonoBehaviour\Player\PlayerSneak.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Project Phobia\Scripts\MonoBehaviour\Items\PickUp.cs">
     <Files>
-      <File FileName="Assets\Project Phobia\Scripts\MonoBehaviour\Player\PlayerMovementKeyboardAndMouse.cs" Line="197" Column="3" />
-      <File FileName="Assets\Project Phobia\Scripts\MonoBehaviour\Player\PlayerManager.cs" Line="69" Column="36" />
-      <File FileName="Assets\Project Phobia\Scripts\MonoBehaviour\Player\PlayerNoiseMaker.cs" Line="30" Column="1" />
-      <File FileName="Assets\Project Phobia\Scripts\MonoBehaviour\Player\PlayerSneak.cs" Line="28" Column="76" />
+      <File FileName="Assets\Project Phobia\Scripts\MonoBehaviour\Managers\GameManager.cs" Line="23" Column="94" />
+      <File FileName="Assets\Project Phobia\Scripts\AI\Actions\EnemyWanderAction.cs" Line="4" Column="1" />
+      <File FileName="Assets\Project Phobia\Scripts\MonoBehaviour\Items\PickUp.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
       <Breakpoint file="D:\Unity local projects\Project Phobia\Assets\Project Phobia\Scripts\AI\Decisions\HearingDecision.cs" line="31" column="1" />
+      <Breakpoint file="D:\Unity local projects\Project Phobia\Assets\Project Phobia\Scripts\MonoBehaviour\Enemy\StateController.cs" line="32" column="3" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />

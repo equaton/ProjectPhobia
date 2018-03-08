@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b193bfced1b60654d9d999786dd58633, type: 3}
+  m_Name: MultipleSpawnManager
+  m_EditorClassIdentifier: 
+  enemySpawnPoint: {fileID: 0}
+  enemyManager:
+    enemyInstance: {fileID: 0}
+    enemyNavAgent: {fileID: 0}
+    enemyTarget: {fileID: 0}
+    controller: {fileID: 0}
+    aiActive: 1
+  enemyPrefab: {fileID: 1136727662873458, guid: f1bb80b0c1e9a614d890aeaa0f4faeed,
+    type: 2}
+  timebetweenSpawns: 5
