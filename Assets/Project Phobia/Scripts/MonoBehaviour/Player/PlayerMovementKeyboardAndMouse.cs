@@ -42,7 +42,6 @@ public class PlayerMovementKeyboardAndMouse : MonoBehaviour
 		sneakingVelocityReduction = GetComponent<PlayerStatistics>().playerStats.sneakingMovementReductionRate;
 		m_Rigidbody = GetComponent<Rigidbody> ();
 		viewCamera = Camera.main;
-		isSneaking = GetComponent<PlayerSneak> ().isSneaking;
 	}
 
 

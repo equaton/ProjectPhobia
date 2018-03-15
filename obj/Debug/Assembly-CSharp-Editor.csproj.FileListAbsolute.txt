@@ -16,7 +16,6 @@ D:\Unity local projects\Project Phobia\Temp\bin\Debug\UnityEditor.TreeEditor.dll
 D:\Unity local projects\Project Phobia\Temp\bin\Debug\UnityEditor.UI.dll
 D:\Unity local projects\Project Phobia\Temp\bin\Debug\UnityEditor.UIAutomation.dll
 D:\Unity local projects\Project Phobia\Temp\bin\Debug\UnityEditor.VR.dll
-D:\Unity local projects\Project Phobia\Temp\bin\Debug\UnityEditor.WebGL.Extensions.dll
 D:\Unity local projects\Project Phobia\Temp\bin\Debug\UnityEditor.WindowsStandalone.Extensions.dll
 D:\Unity local projects\Project Phobia\Temp\bin\Debug\UnityEngine.Analytics.dll
 D:\Unity local projects\Project Phobia\Temp\bin\Debug\UnityEngine.dll
@@ -65,3 +64,5 @@ D:\Unity local projects\Project Phobia\Temp\bin\Debug\UnityEditor.iOS.Extensions
 D:\Unity local projects\Project Phobia\obj\Debug\Assembly-CSharp-Editor.csprojResolveAssemblyReference.cache
 D:\Unity local projects\Project Phobia\obj\Debug\Assembly-CSharp-Editor.dll
 D:\Unity local projects\Project Phobia\obj\Debug\Assembly-CSharp-Editor.pdb
+D:\Unity local projects\Project Phobia\Temp\bin\Debug\UnityEngine.Advertisements.dll
+D:\Unity local projects\Project Phobia\Temp\bin\Debug\UnityEngine.StandardEvents.dll

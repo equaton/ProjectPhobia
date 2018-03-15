@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4610101223739558}
   - component: {fileID: 65970816073085854}
   m_Layer: 13
-  m_Name: LightAI
+  m_Name: LightAIfocused
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45,10 +45,7 @@ GameObject:
   - component: {fileID: 82334077171186476}
   - component: {fileID: 114967675295451472}
   - component: {fileID: 114260990441744834}
-  - component: {fileID: 114191333932802612}
-  - component: {fileID: 114212637222012418}
   - component: {fileID: 114703925934717186}
-  - component: {fileID: 114751024162582028}
   m_Layer: 11
   m_Name: Player
   m_TagString: Player
@@ -130,7 +127,7 @@ GameObject:
   - component: {fileID: 4777493332477382}
   - component: {fileID: 136484955774616502}
   m_Layer: 12
-  m_Name: SoundAI
+  m_Name: LightAIAura
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -241,7 +238,7 @@ Transform:
   m_GameObject: {fileID: 1751620332322262}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 5.395209}
   m_Children: []
   m_Father: {fileID: 4895553171313728}
   m_RootOrder: 2
@@ -652,31 +649,6 @@ MonoBehaviour:
   viewingMovementMaximalDetriment: 0.4
   m_MovementAudio: {fileID: 82651059746362674}
   isSneaking: 0
---- !u!114 &114191333932802612
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1352307869404946}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f15e64179072c6744972f37226f9e769, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currVel: {x: 0, y: 0, z: 0}
---- !u!114 &114212637222012418
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1352307869404946}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc8b7e32e483cf84ab6a5cad333865da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  soundColliderAI: {fileID: 136484955774616502}
-  ColliderRadiusVelocitySmoothTime: 0.3
 --- !u!114 &114260990441744834
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -692,6 +664,8 @@ MonoBehaviour:
   - {fileID: 108492319463832192}
   - {fileID: 108124306461400472}
   toggleSounds: {fileID: 11400000, guid: f804259d1c6e629499acf3e14e711b2a, type: 2}
+  AILight: {fileID: 65970816073085854}
+  AILightAura: {fileID: 136484955774616502}
 --- !u!114 &114703925934717186
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -704,25 +678,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerStats: {fileID: 11400000, guid: 1b43fdaf7346a0b4cae36af4896fd055, type: 2}
---- !u!114 &114751024162582028
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1352307869404946}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0035e17f922a1eb45b2553473d1940b2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isSneaking: 0
 --- !u!114 &114911850862940504
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1478085702264578}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9bb2c7a293b924a13b3ebe80b9fadd99, type: 3}
   m_Name: 
@@ -765,7 +727,7 @@ LineRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1352307869404946}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -865,7 +827,7 @@ LineRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1506477880603432}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -968,7 +930,7 @@ CapsuleCollider:
   m_GameObject: {fileID: 1751620332322262}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 0
+  m_Enabled: 1
   m_Radius: 6.13
   m_Height: 1
   m_Direction: 1
