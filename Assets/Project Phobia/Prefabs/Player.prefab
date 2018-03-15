@@ -126,7 +126,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4777493332477382}
   - component: {fileID: 136484955774616502}
-  m_Layer: 12
+  m_Layer: 13
   m_Name: LightAIAura
   m_TagString: Untagged
   m_Icon: {fileID: 0}

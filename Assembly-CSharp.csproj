@@ -144,6 +144,7 @@
      <Compile Include="Assets\Project Phobia\Scripts\AI\Actions\EnemyChaseAction.cs" />
      <Compile Include="Assets\Project Phobia\Scripts\AI\Actions\EnemyWanderAction.cs" />
      <Compile Include="Assets\Project Phobia\Scripts\AI\Decisions\HearingDecision.cs" />
+     <Compile Include="Assets\Project Phobia\Scripts\AI\Decisions\LightChasingDecision.cs" />
      <Compile Include="Assets\Project Phobia\Scripts\AI\Decisions\LightDecision.cs" />
      <Compile Include="Assets\Project Phobia\Scripts\AI\Decisions\VisualSpottedDecision.cs" />
      <Compile Include="Assets\Project Phobia\Scripts\AI\Decisions\WaitFor5SecondsDecision.cs" />
