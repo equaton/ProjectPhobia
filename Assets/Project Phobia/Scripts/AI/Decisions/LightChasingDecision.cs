@@ -24,7 +24,6 @@ public class LightChasingDecision : EnemyDecision {
 		//If it is hit
 		if (lightCollider.Length != 0) {
 			startLightningThreshold = Mathf.SmoothDamp (startLightningThreshold, 1.1f, ref startLightningVeloocity, damptime);
-			Debug.Log (startLightningThreshold);
 			if (startLightningThreshold > 0) {
 				return true;
 			} else {
@@ -32,8 +31,6 @@ public class LightChasingDecision : EnemyDecision {
 			}
 		} else {
 			startLightningThreshold = Mathf.SmoothDamp (startLightningThreshold, 0f, ref startLightningVeloocity, damptime);
-			Debug.Log (startLightningThreshold);
-
 			if (startLightningThreshold < 0.01) {
 				return false;
 			} else {

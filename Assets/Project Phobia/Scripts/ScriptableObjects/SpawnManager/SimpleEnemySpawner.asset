@@ -3,8 +3,9 @@
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -12,13 +13,12 @@ MonoBehaviour:
   m_Name: SimpleEnemySpawner
   m_EditorClassIdentifier: 
   enemySpawnPoint: {fileID: 4335746276820188, guid: 2ef7dcda04b6db648b5d358bcaabf731,
-    type: 2}
+    type: 3}
   enemyManager:
     enemyInstance: {fileID: 0}
     enemyNavAgent: {fileID: 0}
     enemyTarget: {fileID: 0}
     controller: {fileID: 0}
-    aiActive: 0
-  enemyPrefab: {fileID: 1136727662873458, guid: f1bb80b0c1e9a614d890aeaa0f4faeed,
-    type: 2}
+    aiActive: 1
+  enemyPrefab: {fileID: 90, guid: f1bb80b0c1e9a614d890aeaa0f4faeed, type: 3}
   timebetweenSpawns: 5
